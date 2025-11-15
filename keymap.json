@@ -59,6 +59,7 @@
       "alt-insert": "editor::ShowCompletions",
       "ctrl-o": "editor::OpenExcerpts",
       "ctrl-i": "editor::Indent",
+      "ctrl-\\": "assistant::InlineAssist",
 
       // Commenting
       "ctrl-/": "editor::ToggleComments",
