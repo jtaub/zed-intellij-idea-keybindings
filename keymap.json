@@ -14,17 +14,18 @@
     "context": "Workspace",
     "bindings": {
       "shift shift": "file_finder::Toggle", // Search everywhere
-      "ctrl-n": "file_finder::Toggle", // Go to class
+      "ctrl-n": "project_symbols::Toggle", // Go to class
       "ctrl-shift-n": "file_finder::Toggle", // Go to file
       "ctrl-alt-shift-n": "outline::Toggle", // Go to symbol
       "ctrl-e": "projects::OpenRecent", // Recent files popup
       "ctrl-shift-a": "command_palette::Toggle", // Find Action
-      "alt-1": "workspace::ToggleLeftDock", // Explorer
-      "alt-3": "workspace::ToggleRightDock", // Search
-      "alt-5": "workspace::ToggleRightDock", // Debug
-      "alt-9": "git_panel::OpenMenu", // Git
+      "alt-1": "project_panel::ToggleFocus", // Explorer
+      "alt-3": "file_finder::Toggle", // Search
+      "alt-5": "debugger::FocusTerminal", // Debug
+      "alt-9": "git_panel::ToggleFocus", // Git
       "ctrl-s": "workspace::Save", // Save all
       "ctrl-alt-s": "zed::OpenSettings", // Open Settings dialog
+      "ctrl-alt-shift-s": "zed::OpenProjectSettings", // Open Settings dialog
       "ctrl-`": "theme_selector::Toggle", // TODO not a 1-1 correspondence
       "ctrl-tab": "pane::ActivateNextItem", // Switch between tabs
       "alt-f12": "terminal_panel::ToggleFocus" // Opens and focuses Terminal
@@ -33,6 +34,16 @@
   {
     "context": "Editor",
     "bindings": {
+      // Alt Key panels
+      "alt-1": "project_panel::ToggleFocus", // Explorer
+      "alt-3": "file_finder::Toggle", // Search
+      "alt-5": "debugger::FocusTerminal", // Debug
+      "alt-7": "outline::Toggle",
+      "alt-9": "git_panel::ToggleFocus", // Git
+
+      // Settings
+      "ctrl-alt-s": "zed::OpenSettings", // Open Settings dialog
+
       // Basic code completion
       "ctrl-space": "editor::ShowCompletions",
       "ctrl-shift-space": "editor::ShowCompletions",
@@ -140,7 +151,6 @@
       "ctrl-u": "editor::GoToTypeDefinition",
       "ctrl-shift-i": "editor::Hover",
       "ctrl-shift-b": "editor::GoToTypeDefinition",
-      "alt-7": "outline::Toggle",
       "ctrl-f12": "outline::Toggle",
       "ctrl-h": "editor::GoToTypeDefinition",
       "ctrl-alt-h": "editor::FindAllReferences",
@@ -167,9 +177,9 @@
       "ctrl-alt-p": "editor::ToggleCodeActions",
 
       // VCS
-      "ctrl-k": "git_panel::FocusEditor",
-      "ctrl-shift-k": "git::Blame",
-      "ctrl-t": "git::Blame",
+      "ctrl-k": "git_panel::ToggleFocus",
+      "ctrl-shift-k": "git::Push",
+      "ctrl-t": "git::Pull",
       "ctrl-alt-z": "git::Restore",
 
       // Custom
