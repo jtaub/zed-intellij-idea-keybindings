@@ -1,0 +1,182 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+//
+// IntelliJ IDEA Key Bindings (Linux) for Zed
+//
+// Ported from IntelliJ IDEA keybindings
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "shift shift": "file_finder::Toggle", // Search everywhere
+      "ctrl-n": "file_finder::Toggle", // Go to class
+      "ctrl-shift-n": "file_finder::Toggle", // Go to file
+      "ctrl-alt-shift-n": "outline::Toggle", // Go to symbol
+      "ctrl-e": "projects::OpenRecent", // Recent files popup
+      "ctrl-shift-a": "command_palette::Toggle", // Find Action
+      "alt-1": "workspace::ToggleLeftDock", // Explorer
+      "alt-3": "workspace::ToggleRightDock", // Search
+      "alt-5": "workspace::ToggleRightDock", // Debug
+      "alt-9": "git_panel::OpenMenu", // Git
+      "ctrl-s": "workspace::Save", // Save all
+      "ctrl-alt-s": "zed::OpenSettings", // Open Settings dialog
+      "ctrl-`": "theme_selector::Toggle", // TODO not a 1-1 correspondence
+      "ctrl-tab": "pane::ActivateNextItem", // Switch between tabs
+      "alt-f12": "terminal_panel::ToggleFocus" // Opens and focuses Terminal
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // Basic code completion
+      "ctrl-space": "editor::ShowCompletions",
+      "ctrl-shift-space": "editor::ShowCompletions",
+      "enter": "editor::ConfirmCompletion",
+      "tab": "editor::ConfirmCompletion",
+      "ctrl-shift-enter": "editor::ConfirmCompletionInsert",
+      "ctrl-p": "editor::ToggleInlayHints",
+
+      // Documentation
+      "ctrl-q": "editor::Hover",
+
+      // Code generation
+      "alt-insert": "editor::ShowCompletions",
+      "ctrl-o": "editor::OpenExcerpts",
+      "ctrl-i": "editor::Indent",
+
+      // Commenting
+      "ctrl-/": "editor::ToggleComments",
+      "ctrl-shift-/": "editor::ToggleComments", // TODO https://github.com/zed-industries/zed/issues/4751
+
+      // Selection
+      "ctrl-w": "editor::SelectLargerSyntaxNode",
+      "ctrl-shift-w": "editor::SelectSmallerSyntaxNode",
+      "alt-enter": "editor::ToggleCodeActions",
+
+      // Formatting
+      "ctrl-alt-l": "editor::Format",
+      "ctrl-alt-o": "editor::OrganizeImports",
+
+      // Clipboard
+      "ctrl-x": "editor::Cut",
+      "shift-delete": "editor::Cut",
+      "ctrl-c": "editor::Copy",
+      "ctrl-v": "editor::Paste",
+
+      // Line operations
+      "ctrl-d": "editor::DuplicateLineDown",
+      "ctrl-y": "editor::Redo",
+      "ctrl-shift-j": "editor::JoinLines",
+      "shift-enter": "editor::Newline",
+
+      // Navigation
+      "ctrl-right": "editor::MoveToNextWordEnd",
+      "ctrl-left": "editor::MoveToPreviousWordStart",
+      "ctrl-shift-right": "editor::SelectToNextWordEnd",
+      "ctrl-shift-left": "editor::SelectToPreviousWordStart",
+      "ctrl-delete": "editor::DeleteToNextWordEnd",
+      "ctrl-backspace": "editor::DeleteToPreviousSubwordStart",
+
+      // Folding
+      "ctrl-.": "editor::Fold",
+      "ctrl-=": "editor::UnfoldLines",
+      "ctrl--": "editor::Fold",
+      "ctrl-shift-=": "editor::UnfoldAll",
+      "ctrl-shift--": "editor::FoldAll",
+
+      // Close tab
+      "ctrl-f4": "pane::CloseActiveItem",
+
+      // Multiple cursors
+      "alt-j": "editor::AddSelectionBelow",
+      "alt-shift-j": "editor::UndoSelection",
+
+      // Move lines
+      "shift-alt-down": "editor::MoveLineDown",
+      "shift-alt-up": "editor::MoveLineUp",
+      // "shift-alt-insert": "editor::selection", // TODO https://github.com/zed-industries/zed/discussions/26014
+
+      // Find/Replace
+      "ctrl-f": "buffer_search::Deploy",
+      "f3": "search::SelectNextMatch",
+      "shift-f3": "search::SelectPreviousMatch",
+      "ctrl-r": "buffer_search::Deploy",
+      "ctrl-shift-f": "workspace::NewSearch",
+      "ctrl-shift-r": "workspace::NewSearch", // TODO should be NewSearch with replace dialog open
+
+      // Usage search
+      "alt-f7": "editor::FindAllReferences",
+      "alt-ctrl-f7": "editor::FindAllReferences",
+
+      // Run/Debug
+      "ctrl-f9": "task::Spawn",
+      "alt-shift-f10": "task::Rerun",
+      "shift-f10": "task::Rerun",
+      "shift-f9": "editor::ToggleBreakpoint",
+
+      // Debugging
+      "ctrl-f2": "debugger::Stop",
+      "f8": "debugger::StepOver",
+      "f7": "debugger::StepInto",
+      "shift-f8": "debugger::StepOut",
+      "alt-f9": "debugger::RunToCursor",
+      "f9": "debugger::Continue",
+      "ctrl-f8": "editor::ToggleBreakpoint",
+
+      // Navigation - Go to
+      "ctrl-g": "go_to_line::Toggle",
+      "alt-left": "pane::ActivatePreviousItem",
+      "alt-right": "pane::ActivateNextItem",
+      "ctrl-alt-left": "pane::GoBack",
+      "ctrl-alt-right": "pane::GoForward",
+      "ctrl-shift-backspace": "pane::GoBack",
+      "ctrl-b": "editor::GoToDefinition",
+      "ctrl-alt-b": "editor::GoToImplementation",
+      "ctrl-u": "editor::GoToTypeDefinition",
+      "ctrl-shift-i": "editor::Hover",
+      "ctrl-shift-b": "editor::GoToTypeDefinition",
+      "alt-7": "outline::Toggle",
+      "ctrl-f12": "outline::Toggle",
+      "ctrl-h": "editor::GoToTypeDefinition",
+      "ctrl-alt-h": "editor::FindAllReferences",
+      "f2": "editor::GoToDiagnostic",
+      "shift-f2": "editor::GoToPreviousDiagnostic",
+      "f4": "editor::OpenExcerpts",
+      "ctrl-enter": "editor::OpenExcerpts",
+      "shift-ctrl-down": "editor::MoveLineDown",
+      "shift-ctrl-up": "editor::MoveLineUp",
+      "ctrl-home": "editor::MoveToBeginning",
+      "ctrl-end": "editor::MoveToEnd",
+      "ctrl-shift-m": "editor::MoveToEnclosingBracket",
+      "ctrl-shift-t": "settings_editor::FocusPreviousFile",
+
+      // Refactoring
+      "ctrl-alt-shift-t": "editor::ToggleCodeActions",
+      "f6": "editor::Rename",
+      "shift-f6": "editor::Rename",
+      "ctrl-f6": "editor::ToggleCodeActions",
+      "ctrl-alt-m": "editor::ToggleCodeActions",
+      "ctrl-alt-v": "editor::ToggleCodeActions",
+      "ctrl-alt-f": "editor::ToggleCodeActions",
+      "ctrl-alt-c": "editor::ToggleCodeActions",
+      "ctrl-alt-p": "editor::ToggleCodeActions",
+
+      // VCS
+      "ctrl-k": "git_panel::FocusEditor",
+      "ctrl-shift-k": "git::Blame",
+      "ctrl-t": "git::Blame",
+      "ctrl-alt-z": "git::Restore",
+
+      // Custom
+      "alt-ctrl-enter": "editor::NewlineAbove",
+      "shift-ctrl-enter": "editor::Newline",
+      "ctrl-shift-alt-j": "editor::SelectAllMatches",
+      "shift-ctrl-c": "workspace::CopyPath"
+    }
+  }
+]
